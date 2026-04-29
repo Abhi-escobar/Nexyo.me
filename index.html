@@ -46,7 +46,7 @@
             </div>
             <h1>Hi, I'm <br>Abhishek</h1>
             <p>Building things that matter. I'm a passionate developer turning ideas into real-world products — from
-                mobile apps to AI-powered platforms.</p>
+                mobile apps to full-stack web platforms.</p>
             <div class="hero-actions">
                 <a href="#projects" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-outline">Let's Talk</a>
@@ -65,7 +65,8 @@
         <h2 class="section-title reveal">ABOUT <span class="text-purple">ME</span></h2>
         <div class="about-grid">
             <div class="about-image reveal">
-                <i class='bx bx-user'></i>
+                <img src="assets/images/Snapchat-1201549717.jpg.jpeg" alt="Abhishek"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: inherit;">
             </div>
             <div class="about-text reveal">
                 <h3>I am a passionate <br>
@@ -73,10 +74,12 @@
                         <span id="typewriter" class="typing-text"></span><span class="cursor"></span>
                     </span>
                 </h3>
-                <div id="bio-container"
-                    style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; min-height: 200px;">
-                    <span id="bio-typewriter"></span><span class="bio-cursor"
-                        style="animation: blink 0.5s infinite; font-weight: bold; color: var(--accent);">_</span>
+                <div id="bio-container" style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.9;">
+                    <p id="bio-line-1" style="font-family: 'Brush Script MT', cursive; font-size: 1.35rem;">I build
+                        things. Real things — apps, platforms, tools that actually work. Passionate about Python, mobile
+                        development, and full-stack engineering. I've shipped projects like MedChain (a health-tech
+                        platform built at a 24-hour hackathon) and I'm always working on the next one. Currently an IT
+                        student based in Jharkhand, India. Open to collabs, internships, and interesting problems.</p>
                 </div>
                 <br>
                 <a href="mailto:abhishek@nexyo.me" class="btn btn-primary">Hire Me</a>
@@ -109,15 +112,11 @@
                 <p>Git, GitHub, Fedora Linux, VS Code</p>
             </div>
             <div class="skill-card reveal">
-                <i class='bx bx-brain skill-icon'></i>
-                <h4>AI / ML</h4>
-                <p>XGBoost, SHAP, MediaPipe, Basic ML</p>
+                <i class='bx bx-palette skill-icon'></i>
+                <h4>Design & Creative</h4>
+                <p>Adobe Illustrator, Adobe Premiere Pro, Adobe Photoshop, DaVinci Resolve, Canva</p>
             </div>
-            <div class="skill-card reveal">
-                <i class='bx bx-cog skill-icon'></i>
-                <h4>Other</h4>
-                <p>OCR (Tesseract), NER, Prompt Engineering</p>
-            </div>
+
         </div>
     </section>
 
@@ -125,55 +124,26 @@
     <section id="projects">
         <h2 class="section-title reveal">FEATURED <span class="text-purple">PROJECTS</span></h2>
         <div class="projects-grid">
-            <div class="project-card reveal">
-                <div class="project-img">
-                    <i class='bx bx-heart-circle'></i>
-                </div>
-                <div class="project-content">
-                    <h4>MedChain</h4>
-                    <p>Occupational health risk prediction platform for industrial workers (steel, mining,
-                        manufacturing). Features OCR, NER, XGBoost/SHAP models, and a 3-stakeholder dashboard.</p>
-                    <div class="tags">
-                        <span class="tag">React Native</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">XGBoost</span>
-                    </div>
-                    <a href="https://github.com/Abhi-escobar" target="_blank" class="btn btn-primary">View on GitHub</a>
-                </div>
-            </div>
+
             <div class="project-card reveal">
                 <div class="project-img">
                     <i class='bx bx-music'></i>
                 </div>
                 <div class="project-content">
-                    <h4>ATune</h4>
-                    <p>Music streaming app using YouTube-style audio extraction. Built with React Native and Node.js for
-                        seamless mobile music experience.</p>
+                    <h4>BeatFlow</h4>
+                    <p>A minimal, dark-themed music player web app. Search and stream any song directly in the browser,
+                        powered by the YouTube Data API v3. Built with vanilla HTML, CSS, and JavaScript.</p>
                     <div class="tags">
-                        <span class="tag">React Native</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                    <a href="https://github.com/Abhi-escobar" target="_blank" class="btn btn-primary">View on GitHub</a>
-                </div>
-            </div>
-            <div class="project-card reveal">
-                <div class="project-img">
-                    <i class='bx bx-show'></i>
-                </div>
-                <div class="project-content">
-                    <h4>Hand Detection App</h4>
-                    <p>Real-time hand detection with neon skeleton overlay using MediaPipe. Built in pure HTML and
-                        JavaScript — runs entirely in the browser.</p>
-                    <div class="tags">
-                        <span class="tag">MediaPipe</span>
                         <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
                         <span class="tag">JavaScript</span>
+                        <span class="tag">YouTube API</span>
                     </div>
-                    <a href="https://github.com/Abhi-escobar" target="_blank" class="btn btn-primary">View on GitHub</a>
+                    <a href="https://github.com/Abhi-escobar/beatflow" target="_blank" class="btn btn-primary">View on
+                        GitHub</a>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -209,19 +179,17 @@
                 <a href="https://github.com/Abhi-escobar" target="_blank" class="social-btn">
                     <i class='bx bxl-github'></i> GitHub
                 </a>
-                <a href="https://linkedin.com" target="_blank" class="social-btn">
+                <a href="https://www.linkedin.com/in/abhishek-kumar9835" target="_blank" class="social-btn">
                     <i class='bx bxl-linkedin'></i> LinkedIn
                 </a>
-                <a href="https://instagram.com" target="_blank" class="social-btn">
-                    <i class='bx bxl-instagram'></i> Instagram
-                </a>
+
                 <a href="mailto:abhishek@nexyo.me" class="social-btn">
                     <i class='bx bx-envelope'></i> Email
                 </a>
             </div>
 
             <div class="location">
-                <i class='bx bx-map'></i> Operating remotely from India
+                <i class='bx bx-map'></i> Based in Jharkhand, India — open to remote opportunities
             </div>
         </div>
     </section>
