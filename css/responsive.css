@@ -1,0 +1,388 @@
+/* =========================================================
+   RESPONSIVE.CSS — Mobile & Tablet overrides only
+   Does NOT change colors, fonts, animations, or desktop layout
+   ========================================================= */
+
+/* ─── TABLET (≤ 1024px) ─────────────────────────────────── */
+@media (max-width: 1024px) {
+
+  section {
+    padding: 90px 5%;
+  }
+
+  /* Hero: two-col but tighter */
+  #hero {
+    gap: 2.5rem;
+    padding-top: 120px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero-name {
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    letter-spacing: -1px;
+  }
+
+  .hero-img-ring {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-img-inner {
+    width: 230px;
+    height: 230px;
+  }
+
+  .ring-1 { width: 265px; height: 265px; }
+  .ring-2 { width: 300px; height: 300px; }
+
+  /* About: single col on tablet */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-image-col {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  /* Arsenal: 2-3 per row */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* Projects: 2 col */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  /* Contact: 2 col */
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ─── MOBILE (≤ 768px) ──────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* ── Global ── */
+  section {
+    padding: 70px 5%;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .section-label {
+    font-size: 0.72rem;
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── Navbar ── */
+  nav {
+    padding: 16px 5%;
+  }
+
+  .availability-pill {
+    display: none;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 10, 15, 0.98);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    z-index: 999;
+    transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    list-style: none;
+  }
+
+  .nav-links.open {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+  }
+
+  /* ── Hero ── */
+  #hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding-top: 110px;
+    padding-bottom: 60px;
+    gap: 2.5rem;
+    min-height: auto;
+  }
+
+  .hero-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .hero-name {
+    font-size: clamp(2.6rem, 9vw, 3.5rem);
+    letter-spacing: -1px;
+  }
+
+  .hero-typewriter {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    justify-content: center;
+  }
+
+  .hero-bio {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .hero-badge {
+    font-size: 0.76rem;
+    padding: 6px 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-tech-pills {
+    justify-content: center;
+  }
+
+  /* Profile photo */
+  .hero-image-wrap {
+    margin-top: 0;
+  }
+
+  .hero-img-ring {
+    width: 240px;
+    height: 240px;
+  }
+
+  .hero-img-inner {
+    width: 185px;
+    height: 185px;
+  }
+
+  .ring-1 { width: 215px; height: 215px; }
+  .ring-2 { width: 240px; height: 240px; }
+
+  .float-icon {
+    display: none;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+
+  /* ── About ── */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+
+  .about-image-col {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .about-heading {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .about-bio {
+    font-size: 0.95rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+  }
+
+  .stat-card {
+    padding: 1.2rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .about-text-col .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Arsenal ── */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .skill-card {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .skill-card h4 {
+    font-size: 1rem;
+  }
+
+  /* ── Projects ── */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-preview {
+    height: 180px;
+  }
+
+  .project-btns {
+    flex-direction: column;
+  }
+
+  .project-btns .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Hackathon ── */
+  .hackathon-feature {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .trophy-wrap {
+    width: 80px;
+    height: 80px;
+    font-size: 2.2rem;
+  }
+
+  .hackathon-title {
+    font-size: 1.7rem;
+  }
+
+  .hackathon-meta {
+    justify-content: center;
+  }
+
+  /* ── Contact ── */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .contact-card {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .contact-intro p {
+    font-size: 0.95rem;
+  }
+
+  /* ── Footer ── */
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.2rem;
+  }
+}
+
+/* ─── SMALL MOBILE (≤ 480px) ────────────────────────────── */
+@media (max-width: 480px) {
+
+  section {
+    padding: 60px 4%;
+  }
+
+  #hero {
+    padding-top: 90px;
+  }
+
+  .hero-name {
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    letter-spacing: -0.5px;
+  }
+
+  .hero-typewriter {
+    font-size: 1rem;
+  }
+
+  .hero-img-ring {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-img-inner {
+    width: 158px;
+    height: 158px;
+  }
+
+  .ring-1 { width: 180px; height: 180px; }
+  .ring-2 { width: 200px; height: 200px; }
+
+  .section-title {
+    font-size: clamp(1.8rem, 8vw, 2.4rem);
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hackathon-title {
+    font-size: 1.4rem;
+  }
+
+  .meta-tag {
+    font-size: 0.78rem;
+    padding: 5px 12px;
+  }
+
+  .contact-card-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 1.3rem;
+  }
+
+  .contact-handle {
+    font-size: 0.85rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+}

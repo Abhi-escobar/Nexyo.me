@@ -4,204 +4,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek | Developer Portfolio</title>
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap"
-        rel="stylesheet">
-    <!-- Boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Abhishek — Full Stack Developer | Nexyo.me</title>
+    <meta name="description" content="Abhishek — Full Stack Developer & Builder from Jharkhand, India. Building real-world apps with Python, React Native, FastAPI, and more.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav id="navbar">
-        <a href="#" class="logo">Nex<span>yo.me</span></a>
-        <ul class="nav-links">
-            <li><a href="#hero" class="nav-link active">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#arsenal" class="nav-link">Arsenal</a></li>
-            <li><a href="#projects" class="nav-link">Projects</a></li>
-            <li><a href="#hackathon" class="nav-link">Hackathon</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-        <button class="hamburger">
-            <i class='bx bx-menu'></i>
-        </button>
-    </nav>
+    <!-- Custom cursor -->
+    <div id="cursor-glow"></div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="hero-content reveal active">
-            <!-- Orb Canvas behind text -->
-            <canvas id="orb-canvas"></canvas>
-            <div class="availability-badge">
-                <div class="dot-container">
-                    <span class="dot ping"></span>
-                    <span class="dot"></span>
-                </div>
+    <!-- Particle canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav id="navbar">
+        <a href="#hero" class="logo" id="nav-logo">
+            <span class="logo-nex">Nex</span><span class="logo-yo">yo.me</span>
+        </a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#hero"       class="nav-link active" data-section="hero">Home</a></li>
+            <li><a href="#about"      class="nav-link" data-section="about">About</a></li>
+            <li><a href="#arsenal"    class="nav-link" data-section="arsenal">Arsenal</a></li>
+            <li><a href="#projects"   class="nav-link" data-section="projects">Projects</a></li>
+            <li><a href="#hackathon"  class="nav-link" data-section="hackathon">Hackathon</a></li>
+            <li><a href="#contact"    class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="availability-pill">
+                <span class="pulse-dot"></span>
                 Available for Work
             </div>
-            <h1>Hi, I'm <br>Abhishek</h1>
-            <p>Building things that matter. I'm a passionate developer turning ideas into real-world products — from
-                mobile apps to full-stack web platforms.</p>
-            <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-outline">Let's Talk</a>
-            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-        <div class="hero-image reveal active">
-            <div class="image-placeholder">
-                <img src="assets/images/profile2.jpg" alt="Profile Photo"
-                    style="width: 100%; height: auto; display: block; object-fit: cover;">
-            </div>
-        </div>
-    </section>
+    </nav>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title reveal">ABOUT <span class="text-purple">ME</span></h2>
-        <div class="about-grid">
-            <div class="about-image reveal">
-                <img src="assets/images/Snapchat-1201549717.jpg.jpeg" alt="Abhishek"
-                    style="width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: inherit;">
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" class="hero">
+        <div class="hero-bg-mesh"></div>
+
+        <div class="hero-content">
+            <div class="hero-badge reveal-up">
+                <span class="pulse-dot"></span>
+                Available for Work — Open to Internships & Collabs
             </div>
-            <div class="about-text reveal">
-                <h3>I am a passionate <br>
-                    <span class="typing-container">
-                        <span id="typewriter" class="typing-text"></span><span class="cursor"></span>
-                    </span>
-                </h3>
-                <div id="bio-container" style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.9;">
-                    <p id="bio-line-1" style="font-family: 'Brush Script MT', cursive; font-size: 1.35rem;">I build
-                        things. Real things — apps, platforms, tools that actually work. Passionate about Python, mobile
-                        development, and full-stack engineering. I've shipped projects like MedChain (a health-tech
-                        platform built at a 24-hour hackathon) and I'm always working on the next one. Currently an IT
-                        student based in Jharkhand, India. Open to collabs, internships, and interesting problems.</p>
+
+            <h1 class="hero-name reveal-up delay-1">
+                Hi, I'm <span class="gradient-text">Abhishek</span>
+            </h1>
+
+            <div class="hero-typewriter reveal-up delay-2">
+                <span class="typewriter-prefix">I'm a </span>
+                <span id="typewriter-text" class="typewriter-word"></span>
+                <span class="tw-cursor">|</span>
+            </div>
+
+            <p class="hero-bio reveal-up delay-3">
+                Building things that matter — from mobile apps to full-stack platforms.
+                Turning ideas into real-world products, one commit at a time.
+            </p>
+
+            <div class="hero-actions reveal-up delay-4">
+                <a href="#projects" class="btn btn-primary">
+                    <i class='bx bx-code-block'></i>
+                    View My Work
+                </a>
+                <a href="#contact" class="btn btn-glass">
+                    <i class='bx bx-send'></i>
+                    Let's Talk
+                </a>
+            </div>
+
+            <div class="hero-tech-pills reveal-up delay-5">
+                <span class="tech-pill"><i class='bx bxl-python'></i> Python</span>
+                <span class="tech-pill"><i class='bx bxl-javascript'></i> JavaScript</span>
+                <span class="tech-pill"><i class='bx bxl-react'></i> React Native</span>
+                <span class="tech-pill"><i class='bx bx-server'></i> FastAPI</span>
+            </div>
+        </div>
+
+        <div class="hero-image-wrap reveal-up delay-2">
+            <div class="hero-img-ring">
+                <div class="hero-img-inner">
+                    <img src="assets/images/profile2.jpg" alt="Abhishek — Full Stack Developer" id="hero-photo">
                 </div>
-                <br>
-                <a href="mailto:abhishek@nexyo.me" class="btn btn-primary">Hire Me</a>
+                <div class="ring ring-1"></div>
+                <div class="ring ring-2"></div>
+            </div>
+            <!-- Floating tech icons -->
+            <div class="float-icon fi-1"><i class='bx bxl-python'></i></div>
+            <div class="float-icon fi-2"><i class='bx bxl-nodejs'></i></div>
+            <div class="float-icon fi-3"><i class='bx bxl-react'></i></div>
+            <div class="float-icon fi-4"><i class='bx bx-data'></i></div>
+            <div class="float-icon fi-5"><i class='bx bxl-git'></i></div>
+        </div>
+
+        <a href="#about" class="scroll-hint" aria-label="Scroll down">
+            <i class='bx bx-chevron-down'></i>
+        </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about">
+        <div class="section-header reveal-up">
+            <span class="section-label">01 — About</span>
+            <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-image-col reveal-up">
+                <div class="about-img-frame">
+                    <img src="assets/images/Snapchat-1201549717.jpg.jpeg" alt="Abhishek">
+                    <div class="img-frame-glow"></div>
+                </div>
+            </div>
+
+            <div class="about-text-col reveal-up delay-2">
+                <h3 class="about-heading">
+                    Passionate <span class="gradient-text">Developer</span>
+                    <br>& Problem Solver
+                </h3>
+                <p class="about-bio">
+                    I build things. Real things — apps, platforms, tools that actually work.
+                    Passionate about Python, mobile development, and full-stack engineering.
+                    I've built real products — from a luxury landing page for Jamshedpur's most
+                    loved rooftop restaurant to full-stack web platforms. Always working on the
+                    next one. Currently an IT student based in Jharkhand, India. Open to collabs,
+                    internships, and interesting problems.
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-card glass-card">
+                        <span class="stat-number gradient-text">2+</span>
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <span class="stat-number gradient-text">1</span>
+                        <span class="stat-label">Hackathon</span>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <span class="stat-number gradient-text">15+</span>
+                        <span class="stat-label">Technologies</span>
+                    </div>
+                    <div class="stat-card glass-card open">
+                        <span class="pulse-dot"></span>
+                        <span class="stat-label">Open to Work</span>
+                    </div>
+                </div>
+
+                <a href="mailto:abhishek@nexyo.me" class="btn btn-primary">
+                    <i class='bx bx-paper-plane'></i> Hire Me
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Arsenal Section -->
+    <!-- ===================== ARSENAL ===================== -->
     <section id="arsenal">
-        <h2 class="section-title reveal">MY <span class="text-purple">ARSENAL</span></h2>
+        <div class="section-header reveal-up">
+            <span class="section-label">02 — Skills</span>
+            <h2 class="section-title">My <span class="gradient-text">Arsenal</span></h2>
+        </div>
+
         <div class="skills-grid">
-            <div class="skill-card reveal">
-                <i class='bx bx-code-alt skill-icon'></i>
-                <h4>Core Languages</h4>
-                <p>Python, C, JavaScript, HTML5, CSS3</p>
+
+            <div class="skill-card glass-card reveal-up">
+                <div class="skill-card-header">
+                    <div class="skill-icon-wrap">
+                        <i class='bx bx-code-alt'></i>
+                    </div>
+                    <h4>Core Languages</h4>
+                </div>
+                <div class="skill-pills">
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">C</span>
+                    <span class="skill-pill">JavaScript</span>
+                    <span class="skill-pill">HTML5</span>
+                    <span class="skill-pill">CSS3</span>
+                </div>
             </div>
-            <div class="skill-card reveal">
-                <i class='bx bxl-react skill-icon'></i>
-                <h4>Frontend & Mobile</h4>
-                <p>React Native, HTML, CSS, Responsive Design</p>
+
+            <div class="skill-card glass-card reveal-up delay-1">
+                <div class="skill-card-header">
+                    <div class="skill-icon-wrap cyan">
+                        <i class='bx bxl-react'></i>
+                    </div>
+                    <h4>Frontend & Mobile</h4>
+                </div>
+                <div class="skill-pills">
+                    <span class="skill-pill">React Native</span>
+                    <span class="skill-pill">HTML5</span>
+                    <span class="skill-pill">CSS3</span>
+                    <span class="skill-pill">Responsive Design</span>
+                </div>
             </div>
-            <div class="skill-card reveal">
-                <i class='bx bx-server skill-icon'></i>
-                <h4>Backend</h4>
-                <p>FastAPI, Node.js, PostgreSQL, REST APIs</p>
+
+            <div class="skill-card glass-card reveal-up delay-2">
+                <div class="skill-card-header">
+                    <div class="skill-icon-wrap purple">
+                        <i class='bx bx-server'></i>
+                    </div>
+                    <h4>Backend</h4>
+                </div>
+                <div class="skill-pills">
+                    <span class="skill-pill">FastAPI</span>
+                    <span class="skill-pill">Node.js</span>
+                    <span class="skill-pill">PostgreSQL</span>
+                    <span class="skill-pill">REST APIs</span>
+                </div>
             </div>
-            <div class="skill-card reveal">
-                <i class='bx bx-terminal skill-icon'></i>
-                <h4>DevOps & Tools</h4>
-                <p>Git, GitHub, Fedora Linux, VS Code</p>
+
+            <div class="skill-card glass-card reveal-up delay-3">
+                <div class="skill-card-header">
+                    <div class="skill-icon-wrap cyan">
+                        <i class='bx bx-terminal'></i>
+                    </div>
+                    <h4>DevOps & Tools</h4>
+                </div>
+                <div class="skill-pills">
+                    <span class="skill-pill">Git</span>
+                    <span class="skill-pill">GitHub</span>
+                    <span class="skill-pill">Linux</span>
+                    <span class="skill-pill">VS Code</span>
+                </div>
             </div>
-            <div class="skill-card reveal">
-                <i class='bx bx-palette skill-icon'></i>
-                <h4>Design & Creative</h4>
-                <p>Adobe Illustrator, Adobe Premiere Pro, Adobe Photoshop, DaVinci Resolve, Canva</p>
+
+            <div class="skill-card glass-card reveal-up delay-4">
+                <div class="skill-card-header">
+                    <div class="skill-icon-wrap purple">
+                        <i class='bx bx-palette'></i>
+                    </div>
+                    <h4>Design & Creative</h4>
+                </div>
+                <div class="skill-pills">
+                    <span class="skill-pill">Adobe Illustrator</span>
+                    <span class="skill-pill">Premiere Pro</span>
+                    <span class="skill-pill">Photoshop</span>
+                    <span class="skill-pill">DaVinci Resolve</span>
+                    <span class="skill-pill">Canva</span>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- ===================== PROJECTS ===================== -->
     <section id="projects">
-        <h2 class="section-title reveal">FEATURED <span class="text-purple">PROJECTS</span></h2>
+        <div class="section-header reveal-up">
+            <span class="section-label">03 — Work</span>
+            <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        </div>
+
         <div class="projects-grid">
 
-            <div class="project-card reveal">
-                <div class="project-img">
-                    <i class='bx bx-music'></i>
+            <!-- BeatFlow -->
+            <div class="project-card glass-card reveal-up">
+                <div class="project-preview beatflow-preview">
+                    <div class="project-preview-icon">
+                        <i class='bx bxs-music'></i>
+                    </div>
+                    <div class="project-preview-bg"></div>
                 </div>
-                <div class="project-content">
-                    <h4>BeatFlow</h4>
-                    <p>A minimal, dark-themed music player web app. Search and stream any song directly in the browser,
-                        powered by the YouTube Data API v3. Built with vanilla HTML, CSS, and JavaScript.</p>
-                    <div class="tags">
+                <div class="project-body">
+                    <div class="project-tags">
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
                         <span class="tag">JavaScript</span>
                         <span class="tag">YouTube API</span>
                     </div>
-                    <a href="https://github.com/Abhi-escobar/beatflow" target="_blank" class="btn btn-primary">View on
-                        GitHub</a>
+                    <h3 class="project-title">BeatFlow</h3>
+                    <p class="project-desc">
+                        A minimal, dark-themed music player web app. Search and stream any song
+                        directly in the browser, powered by the YouTube Data API v3.
+                        Built with vanilla HTML, CSS, and JavaScript.
+                    </p>
+                    <div class="project-btns">
+                        <a href="https://github.com/Abhi-escobar/beatflow" target="_blank" rel="noopener noreferrer" class="btn btn-project btn-project-outline">
+                            <i class='bx bxl-github'></i> GitHub
+                        </a>
+                        <a href="https://beatzflow.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-project btn-project-live">
+                            <i class='bx bx-link-external'></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LSD — Lounge & Sky Dining -->
+            <div class="project-card glass-card reveal-up delay-2">
+                <div class="project-preview lsd-preview">
+                    <div class="project-preview-icon lsd-icon">
+                        <i class='bx bx-dish'></i>
+                    </div>
+                    <div class="project-preview-bg"></div>
+                </div>
+                <div class="project-body">
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Responsive Design</span>
+                    </div>
+                    <h3 class="project-title">LSD — Lounge &amp; Sky Dining</h3>
+                    <p class="project-desc">
+                        A luxury landing page for Jamshedpur's most loved rooftop restaurant.
+                        Dark gold theme, mobile responsive, with menu, gallery, WhatsApp &amp;
+                        Swiggy integration.
+                    </p>
+                    <div class="project-btns">
+                        <a href="https://github.com/Abhi-escobar/lsd-sky-dining" target="_blank" rel="noopener noreferrer" class="btn btn-project btn-project-outline">
+                            <i class='bx bxl-github'></i> GitHub
+                        </a>
+                        <a href="https://lsd-jamshedpur.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-project btn-project-live">
+                            <i class='bx bx-link-external'></i> Live Site
+                        </a>
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- Hackathon Section -->
+    <!-- ===================== HACKATHON ===================== -->
     <section id="hackathon">
-        <h2 class="section-title reveal">HACK<span class="text-purple">ATHON</span></h2>
-        <div class="hackathon-card reveal">
-            <i class='bx bx-trophy hackathon-icon'></i>
-            <div class="hackathon-info">
-                <h3>HackHorizon 2.0</h3>
-                <p>Participated in a 24-hour hackathon at Arka Jain University, Jharkhand. Built MedChain — an
-                    occupational health risk prediction platform for industrial workers under the Health & Wellness
-                    track.</p>
+        <div class="section-header reveal-up">
+            <span class="section-label">04 — Achievement</span>
+            <h2 class="section-title">Hack<span class="gradient-text">athon</span></h2>
+        </div>
+
+        <div class="hackathon-feature reveal-up">
+            <div class="hackathon-glow-ring">
+                <div class="trophy-wrap">
+                    <i class='bx bxs-trophy'></i>
+                </div>
+            </div>
+
+            <div class="hackathon-body">
+                <div class="hackathon-eyebrow">
+                    <span class="tag cyan-tag">HackHorizon 2.0</span>
+                </div>
+                <h3 class="hackathon-title">HackHorizon 2.0</h3>
+                <p class="hackathon-desc">
+                    Participated in a 24-hour hackathon at Arka Jain University, Jharkhand.
+                    Built <strong>MedChain</strong> — an occupational health risk prediction platform
+                    for industrial workers under the Health &amp; Wellness track.
+                </p>
                 <div class="hackathon-meta">
-                    <span class="meta-badge">📅 April 10–11, 2026</span>
-                    <span class="meta-badge">⏱ 24 Hours</span>
-                    <span class="meta-badge">👥 Team: WeCameForFun</span>
-                    <span class="meta-badge">🏥 Health & Wellness Track</span>
-                    <span class="meta-badge">📍 Arka Jain University</span>
+                    <div class="meta-tag">
+                        <i class='bx bx-calendar'></i>
+                        <span>April 10–11, 2026</span>
+                    </div>
+                    <div class="meta-tag">
+                        <i class='bx bx-time'></i>
+                        <span>24 Hours</span>
+                    </div>
+                    <div class="meta-tag">
+                        <i class='bx bx-group'></i>
+                        <span>Team: WeCameForFun</span>
+                    </div>
+                    <div class="meta-tag">
+                        <i class='bx bx-heart'></i>
+                        <span>Health &amp; Wellness Track</span>
+                    </div>
+                    <div class="meta-tag">
+                        <i class='bx bx-map-pin'></i>
+                        <span>Arka Jain University</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- ===================== CONTACT ===================== -->
     <section id="contact">
-        <h2 class="section-title reveal">LET'S <span class="text-purple">CONNECT</span></h2>
-        <div class="contact-container reveal">
-            <p>I'm open to internship opportunities and collaborations. Whether you have a project idea or just want to
-                say hi — reach out!</p>
+        <div class="section-header reveal-up">
+            <span class="section-label">05 — Contact</span>
+            <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+        </div>
 
-            <div class="social-grid">
-                <a href="https://github.com/Abhi-escobar" target="_blank" class="social-btn">
-                    <i class='bx bxl-github'></i> GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/abhishek-kumar9835" target="_blank" class="social-btn">
-                    <i class='bx bxl-linkedin'></i> LinkedIn
-                </a>
+        <div class="contact-intro reveal-up delay-1">
+            <p>I'm open to internship opportunities and collaborations. Whether you have a project idea or just want to say hi — reach out!</p>
+        </div>
 
-                <a href="mailto:abhishek@nexyo.me" class="social-btn">
-                    <i class='bx bx-envelope'></i> Email
-                </a>
-            </div>
+        <div class="contact-grid reveal-up delay-2">
 
-            <div class="location">
-                <i class='bx bx-map'></i> Based in Jharkhand, India — open to remote opportunities
-            </div>
+            <a href="https://github.com/Abhi-escobar" target="_blank" rel="noopener noreferrer" class="contact-card glass-card" id="github-card">
+                <div class="contact-card-icon">
+                    <i class='bx bxl-github'></i>
+                </div>
+                <div class="contact-card-info">
+                    <span class="contact-platform">GitHub</span>
+                    <span class="contact-handle">@Abhi-escobar</span>
+                </div>
+                <i class='bx bx-chevron-right contact-arrow'></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/abhishek-kumar9835" target="_blank" rel="noopener noreferrer" class="contact-card glass-card" id="linkedin-card">
+                <div class="contact-card-icon linkedin-icon">
+                    <i class='bx bxl-linkedin'></i>
+                </div>
+                <div class="contact-card-info">
+                    <span class="contact-platform">LinkedIn</span>
+                    <span class="contact-handle">abhishek-kumar9835</span>
+                </div>
+                <i class='bx bx-chevron-right contact-arrow'></i>
+            </a>
+
+            <a href="mailto:abhishek@nexyo.me" class="contact-card glass-card" id="email-card">
+                <div class="contact-card-icon email-icon">
+                    <i class='bx bx-envelope'></i>
+                </div>
+                <div class="contact-card-info">
+                    <span class="contact-platform">Email</span>
+                    <span class="contact-handle">abhishek@nexyo.me</span>
+                </div>
+                <i class='bx bx-chevron-right contact-arrow'></i>
+            </a>
+
+            <a href="https://wa.me/919835716321" target="_blank" rel="noopener noreferrer" class="contact-card glass-card" id="whatsapp-card">
+                <div class="contact-card-icon whatsapp-icon">
+                    <i class='bx bxl-whatsapp'></i>
+                </div>
+                <div class="contact-card-info">
+                    <span class="contact-platform">WhatsApp</span>
+                    <span class="contact-handle">+91 98357 16321</span>
+                </div>
+                <i class='bx bx-chevron-right contact-arrow'></i>
+            </a>
+
+        </div>
+
+        <div class="location-badge reveal-up delay-3">
+            <i class='bx bx-map-pin'></i>
+            <span>Based in Jharkhand, India — Open to remote opportunities</span>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===================== FOOTER ===================== -->
     <footer>
-        <a href="#" class="logo">Nex<span>yo.</span></a>
-        <p>&copy; 2026 Abhishek. All rights reserved.</p>
+        <div class="footer-inner">
+            <a href="#hero" class="logo footer-logo">
+                <span class="logo-nex">Nex</span><span class="logo-yo">yo.me</span>
+            </a>
+            <p class="footer-copy">&copy; 2026 Abhishek. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Abhi-escobar" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                <a href="https://www.linkedin.com/in/abhishek-kumar9835" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                <a href="mailto:abhishek@nexyo.me" aria-label="Email"><i class='bx bx-envelope'></i></a>
+            </div>
+        </div>
     </footer>
 
+    <script src="js/particles.js" defer></script>
     <script src="js/main.js" defer></script>
-    <script src="js/orb.js" defer></script>
 </body>
 
 </html>
